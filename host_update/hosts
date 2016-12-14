@@ -4,7 +4,7 @@
 # This work is licensed under a CC BY-NC-SA 4.0 International License.
 # https://creativecommons.org/licenses/by-nc-sa/4.0/
 # Localhost (DO NOT REMOVE)
-127.0.0.1	localhost
+127.0.0.1	localhost ubuntu
 ::1	localhost ip6-localhost ip6-loopback
 # Modified hosts start
 # Armorgames Start

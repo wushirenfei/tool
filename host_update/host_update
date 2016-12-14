@@ -1,0 +1,26 @@
+#!/usr/bin/python
+# -*- coding=utf-8 -*-
+import re
+import requests
+import os
+
+
+def update_hosts(url=None):
+    if not url:
+        url = 'https://github.com/racaljk/hosts/blob/master/hosts'
+
+        response = requests.get(url)
+
+        res = re.findall(r'<td id="LC(.*)</td>', response.text)
+
+        file = open('./hosts','w')
+        for line in res:
+            file.write('{}\n'.format(re.findall(r'>(.*)', line)[0]))
+        file.flush()
+        file.close()
+
+        os.system("sed -i 's/localhost$/localhost ubuntu/' hosts")
+        os.system("echo 'alex' | sudo -S cp ./hosts /etc/hosts")
+
+if __name__ == '__main__':
+    update_hosts()
