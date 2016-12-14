@@ -1,8 +1,7 @@
 # -*- coding=utf-8 -*-
-
 import re
 import requests
-import pprint
+import sys
 
 
 def update_hosts(url=None):
@@ -18,6 +17,7 @@ def update_hosts(url=None):
             file.write('{}\n'.format(re.findall(r'>(.*)', line)[0]))
         file.flush()
         file.close()
+        sys.exit(1)
 
 
 if __name__ == '__main__':

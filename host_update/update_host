@@ -1,0 +1,13 @@
+#!/bin/bash
+
+python host_update.py
+if [ $?==1 ];then
+
+  echo "alex" | sudo -S cp ./hosts ./testfile
+fi 
+
+
+
+
+
+
